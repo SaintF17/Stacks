@@ -1,4 +1,4 @@
-package ca.unb.mobiledev.stacks.ui.slideshow;
+package ca.unb.mobiledev.stacks.ui.charts;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,24 +12,23 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import ca.unb.mobiledev.stacks.R;
-import ca.unb.mobiledev.stacks.databinding.FragmentSlideshowBinding;
+import ca.unb.mobiledev.stacks.databinding.FragmentChartsBinding;
 
-public class SlideshowFragment extends Fragment {
+public class ChartsFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
-    private FragmentSlideshowBinding binding;
+    private ChartsViewModel chartsViewModel;
+    private FragmentChartsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        chartsViewModel =
+                new ViewModelProvider(this).get(ChartsViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentChartsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textCharts;
+        chartsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

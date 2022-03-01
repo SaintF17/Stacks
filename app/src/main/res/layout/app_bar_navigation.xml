@@ -29,7 +29,7 @@
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_input_add"
-        android:contentDescription="Add button" />
+        app:srcCompat="@android:drawable/ic_menu_camera"
+        android:contentDescription="OCR button" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

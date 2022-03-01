@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+    android:gravity="center"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="193dp"
+        android:text="Welcome to stacks budgeting. Please select a category to begin planning your budget."
+        android:textAlignment="viewStart"
+        android:textSize="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="49dp" />
+
+    <CheckBox
+        android:id="@+id/Rent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rent" />
+
+    <CheckBox
+        android:id="@+id/Entertainment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Entertainment" />
+
+    <CheckBox
+        android:id="@+id/Fuel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fuel" />
+
+    <CheckBox
+        android:id="@+id/Groceries"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Groceries" />
+
+    <CheckBox
+        android:id="@+id/Phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phone" />
+
+    <CheckBox
+        android:id="@+id/Utilities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Utilities" />
+
+    <Button
+        android:id="@+id/catergory_next_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next" />
+</LinearLayout>

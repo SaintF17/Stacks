@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Stacks">
         <activity
+            android:name=".HomeActivity"
+            android:label="Home"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

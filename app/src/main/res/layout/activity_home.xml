@@ -1,64 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity"
-    android:gravity="center"
-    android:padding="16dp"
-    android:orientation="vertical">
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="369dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="102dp"
+        android:text="Welcome to stacks budgeting. Please select a category to begin planning your budget."
+        android:textAlignment="viewStart"
+        android:textSize="20dp" />
+
+    <CheckBox
+        android:id="@+id/Groceries"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="233dp"
+        android:text="Groceries" />
+
+    <CheckBox
+        android:id="@+id/Utilities"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="334dp"
+        android:text="Utilities" />
+
+    <CheckBox
+        android:id="@+id/Phone"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="286dp"
+        android:text="Phone" />
+
+    <CheckBox
+        android:id="@+id/Fuel"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="185dp"
+        android:text="Fuel" />
+
+    <CheckBox
+        android:id="@+id/Entertainment"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="134dp"
+        android:text="Entertainment" />
+
+    <EditText
+        android:id="@+id/text_entertainment"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="245dp"
+        android:layout_marginBottom="132dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/text_fuel"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="245dp"
+        android:layout_marginBottom="185dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/text_groceries"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="245dp"
+        android:layout_marginBottom="233dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/text_phone"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="245dp"
+        android:layout_marginBottom="284dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/text_utilities"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="245dp"
+        android:layout_marginBottom="332dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/text_rent"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="245dp"
+        android:layout_marginBottom="385dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <CheckBox
+        android:id="@+id/Rent"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="385dp"
+        android:text="Rent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="193dp"
-        android:text="Welcome to stacks budgeting. Please select a category to begin planning your budget."
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="24dp"
+        android:text="$TACK$"
         android:textAlignment="viewStart"
-        android:textSize="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="49dp" />
-
-    <CheckBox
-        android:id="@+id/Rent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Rent" />
-
-    <CheckBox
-        android:id="@+id/Entertainment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Entertainment" />
-
-    <CheckBox
-        android:id="@+id/Fuel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Fuel" />
-
-    <CheckBox
-        android:id="@+id/Groceries"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Groceries" />
-
-    <CheckBox
-        android:id="@+id/Phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Phone" />
-
-    <CheckBox
-        android:id="@+id/Utilities"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Utilities" />
+        android:textSize="50dp" />
 
     <Button
         android:id="@+id/catergory_next_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="370dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="40dp"
+        android:baselineAligned="false"
         android:text="Next" />
-</LinearLayout>
+
+
+</RelativeLayout>

@@ -7,17 +7,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.Checkable;
-import android.widget.EditText;
+
+import java.util.ArrayList;
+
+import ca.unb.mobiledev.stacks.utils.CategoryObject;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private EditText rent_txt;
-    private EditText entertainment_txt;
-    private EditText fuel_txt;
-    private EditText groceries_txt;
-    private EditText phone_txt;
-    private EditText utilities_txt;
+    public static ArrayList<CategoryObject> categoryObjects;
+    private CategoryObject rent;
+    private CategoryObject entertainment;
+    private CategoryObject fuel;
+    private CategoryObject groceries;
+    private CategoryObject phone;
+    private CategoryObject utilities;
 
     private CheckBox rent_box;
     private CheckBox entertainment_box;
@@ -31,25 +34,27 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button next = findViewById(R.id.catergory_next_btn);
-        next.setOnClickListener(view -> {
-            Intent intent = new Intent(HomeActivity.this, NavigationActivity.class);
-            startActivity(intent);
-        });
+        categoryObjects = new ArrayList<>();
         //--------------------------------------------------------- EDITTEXT
-        rent_txt = findViewById(R.id.text_rent);
-        entertainment_txt = findViewById(R.id.text_entertainment);
-        fuel_txt = findViewById(R.id.text_fuel);
-        groceries_txt = findViewById(R.id.text_groceries);
-        phone_txt = findViewById(R.id.text_phone);
-        utilities_txt = findViewById(R.id.text_utilities);
+        rent = new CategoryObject("Rent", findViewById(R.id.text_rent));
+        categoryObjects.add(rent);
+        entertainment = new CategoryObject("Entertainment", findViewById(R.id.text_entertainment));
+        categoryObjects.add(entertainment);
+        fuel = new CategoryObject("Fuel", findViewById(R.id.text_fuel));
+        categoryObjects.add(fuel);
+        groceries = new CategoryObject("Groceries", findViewById(R.id.text_groceries));
+        categoryObjects.add(groceries);
+        phone = new CategoryObject("Phone", findViewById(R.id.text_phone));
+        categoryObjects.add(phone);
+        utilities = new CategoryObject("Utilities", findViewById(R.id.text_utilities));
+        categoryObjects.add(utilities);
 
-        rent_txt.setVisibility(View.INVISIBLE);
-        entertainment_txt.setVisibility(View.INVISIBLE);
-        fuel_txt.setVisibility(View.INVISIBLE);
-        groceries_txt.setVisibility(View.INVISIBLE);
-        phone_txt.setVisibility(View.INVISIBLE);
-        utilities_txt.setVisibility(View.INVISIBLE);
+        rent.getText().setVisibility(View.INVISIBLE);
+        entertainment.getText().setVisibility(View.INVISIBLE);
+        fuel.getText().setVisibility(View.INVISIBLE);
+        groceries.getText().setVisibility(View.INVISIBLE);
+        phone.getText().setVisibility(View.INVISIBLE);
+        utilities.getText().setVisibility(View.INVISIBLE);
 
         //--------------------------------------------------------- EDITTEXT
         //--------------------------------------------------------- CHECKBOX
@@ -66,34 +71,34 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (rent_box.isChecked())
-                    rent_txt.setVisibility(View.VISIBLE);
+                    rent.getText().setVisibility(View.VISIBLE);
                 if(!rent_box.isChecked())
-                    rent_txt.setVisibility(View.INVISIBLE);
+                    rent.getText().setVisibility(View.INVISIBLE);
 
                 if (entertainment_box.isChecked())
-                    entertainment_txt.setVisibility(View.VISIBLE);
+                    entertainment.getText().setVisibility(View.VISIBLE);
                 if(!entertainment_box.isChecked())
-                    entertainment_txt.setVisibility(View.INVISIBLE);
+                    entertainment.getText().setVisibility(View.INVISIBLE);
 
                 if (fuel_box.isChecked())
-                    fuel_txt.setVisibility(View.VISIBLE);
+                    fuel.getText().setVisibility(View.VISIBLE);
                 if(!fuel_box.isChecked())
-                    fuel_txt.setVisibility(View.INVISIBLE);
+                    fuel.getText().setVisibility(View.INVISIBLE);
 
                 if (groceries_box.isChecked())
-                    groceries_txt.setVisibility(View.VISIBLE);
+                    groceries.getText().setVisibility(View.VISIBLE);
                 if(!groceries_box.isChecked())
-                    groceries_txt.setVisibility(View.INVISIBLE);
+                    groceries.getText().setVisibility(View.INVISIBLE);
 
                 if (phone_box.isChecked())
-                    phone_txt.setVisibility(View.VISIBLE);
+                    phone.getText().setVisibility(View.VISIBLE);
                 if(!phone_box.isChecked())
-                    phone_txt.setVisibility(View.INVISIBLE);
+                    phone.getText().setVisibility(View.INVISIBLE);
 
                 if (utilities_box.isChecked())
-                    utilities_txt.setVisibility(View.VISIBLE);
+                    utilities.getText().setVisibility(View.VISIBLE);
                 if(!utilities_box.isChecked())
-                    utilities_txt.setVisibility(View.INVISIBLE);
+                    utilities.getText().setVisibility(View.INVISIBLE);
 
             }
         };
@@ -103,5 +108,13 @@ public class HomeActivity extends AppCompatActivity {
         groceries_box.setOnClickListener(checkBoxListener);
         phone_box.setOnClickListener(checkBoxListener);
         utilities_box.setOnClickListener(checkBoxListener);
+
+        // Button to go to the navigation page
+        Button next = findViewById(R.id.catergory_next_btn);
+        next.setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, NavigationActivity.class);
+            startActivity(intent);
+        });
+
     }
 }

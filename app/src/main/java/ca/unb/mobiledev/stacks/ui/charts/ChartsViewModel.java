@@ -10,7 +10,7 @@ public class ChartsViewModel extends ViewModel {
 
     public ChartsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is charts fragment");
+        mText.setValue("Statistics (bar and pie charts) go here later.");
     }
 
     public LiveData<String> getText() {

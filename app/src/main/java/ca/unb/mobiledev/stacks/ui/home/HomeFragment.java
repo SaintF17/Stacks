@@ -39,6 +39,7 @@ public class HomeFragment extends Fragment {
                 ProgressBar progressBar = new ProgressBar(getContext(), null,
                         android.R.attr.progressBarStyleHorizontal);
                 progressBar.setMax(Integer.parseInt(o.getText().getText().toString()));
+                // Get random num and fill category bar with it
                 Random random = new Random();
                 progressBar.setProgress(random.nextInt(progressBar.getMax()));
                 category.setTextSize(22);

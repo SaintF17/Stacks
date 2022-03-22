@@ -4,11 +4,15 @@ import android.widget.EditText;
 
 public class CategoryObject {
     private String name;
-    private EditText text;
+    private EditText budgetText;
+
+    // Store the related items in a category in an arr of ItemObjects
+    // would this be easier if implemented as a <T> instead (or linked list?)
+    private ItemObject[] itemArr = new ItemObject[0];
 
     public CategoryObject(String name, EditText text) {
         this.name = name;
-        this.text = text;
+        this.budgetText = text;
     }
 
     public String getName() {
@@ -20,10 +24,10 @@ public class CategoryObject {
     }
 
     public EditText getText() {
-        return text;
+        return budgetText;
     }
 
     public void setText(EditText text) {
-        this.text = text;
+        this.budgetText = text;
     }
 }

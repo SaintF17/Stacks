@@ -14,7 +14,10 @@ import ca.unb.mobiledev.stacks.utils.CategoryObject;
 
 public class HomeActivity extends AppCompatActivity {
 
-    public static ArrayList<CategoryObject> categoryObjects;
+    //Arraylist of all initial categories
+    private ArrayList<CategoryObject> objects;
+    //Arraylist of all selected categories
+    public static ArrayList<CategoryObject> activeCategories;
     private CategoryObject rent;
     private CategoryObject entertainment;
     private CategoryObject fuel;
@@ -34,20 +37,21 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        categoryObjects = new ArrayList<>();
+        objects = new ArrayList<>();
+        activeCategories = new ArrayList<>();
         //--------------------------------------------------------- EDITTEXT
         rent = new CategoryObject("Rent", findViewById(R.id.text_rent));
-        categoryObjects.add(rent);
+        objects.add(rent);
         entertainment = new CategoryObject("Entertainment", findViewById(R.id.text_entertainment));
-        categoryObjects.add(entertainment);
+        objects.add(entertainment);
         fuel = new CategoryObject("Fuel", findViewById(R.id.text_fuel));
-        categoryObjects.add(fuel);
+        objects.add(fuel);
         groceries = new CategoryObject("Groceries", findViewById(R.id.text_groceries));
-        categoryObjects.add(groceries);
+        objects.add(groceries);
         phone = new CategoryObject("Phone", findViewById(R.id.text_phone));
-        categoryObjects.add(phone);
+        objects.add(phone);
         utilities = new CategoryObject("Utilities", findViewById(R.id.text_utilities));
-        categoryObjects.add(utilities);
+        objects.add(utilities);
 
         rent.getText().setVisibility(View.INVISIBLE);
         entertainment.getText().setVisibility(View.INVISIBLE);
@@ -112,6 +116,11 @@ public class HomeActivity extends AppCompatActivity {
         // Button to go to the navigation page
         Button next = findViewById(R.id.catergory_next_btn);
         next.setOnClickListener(view -> {
+            //Loop to populate active categories. Probably a cleaner way of doing it but this prevents concurrency exceptions.
+            for (CategoryObject o: objects) {
+                if((o.getText().getVisibility() == View.VISIBLE))
+                    activeCategories.add(o);
+            }
             Intent intent = new Intent(HomeActivity.this, NavigationActivity.class);
             startActivity(intent);
         });

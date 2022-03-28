@@ -142,9 +142,6 @@ public class OCRActivity extends AppCompatActivity {
 
             button_capture.setText("Retake");
         }
-        Log.d("My arr", list.toString());
-        Log.d("My arr size", String.valueOf(list.size()));
-
         return map;
     }
 }

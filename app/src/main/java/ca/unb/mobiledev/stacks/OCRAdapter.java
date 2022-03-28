@@ -36,7 +36,7 @@ public class OCRAdapter extends BaseAdapter {
         final View result;
 
         if (convertView == null) {
-            result = LayoutInflater.from(parent.getContext()).inflate(R.layout.my_adapter_item, parent, false);
+            result = LayoutInflater.from(parent.getContext()).inflate(R.layout.ocr_adapter_item, parent, false);
         } else {
             result = convertView;
         }

@@ -9,7 +9,7 @@
     android:paddingRight="10dp"
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
-    tools:context=".MainActivity">
+    tools:context=".SplashActivity">
 
     <TextView
         android:id="@+id/textView2"

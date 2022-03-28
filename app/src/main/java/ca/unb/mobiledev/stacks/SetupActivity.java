@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 import ca.unb.mobiledev.stacks.utils.CategoryObject;
 
-public class HomeActivity extends AppCompatActivity {
+public class SetupActivity extends AppCompatActivity {
 
     //Arraylist of all initial categories
     private ArrayList<CategoryObject> objects;
@@ -121,7 +121,7 @@ public class HomeActivity extends AppCompatActivity {
                 if((o.getText().getVisibility() == View.VISIBLE))
                     activeCategories.add(o);
             }
-            Intent intent = new Intent(HomeActivity.this, NavigationActivity.class);
+            Intent intent = new Intent(SetupActivity.this, NavigationActivity.class);
             startActivity(intent);
         });
 

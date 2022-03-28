@@ -31,6 +31,7 @@ public class NavigationActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.appBarNavigation.toolbar);
         binding.appBarNavigation.fab.setOnClickListener(view -> {
+            //starting ocr feature intent
             Intent i = new Intent(NavigationActivity.this, OCRActivity.class);
             startActivity(i);
         });

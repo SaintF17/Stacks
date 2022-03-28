@@ -13,7 +13,6 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.util.SparseArray;
 import android.widget.Button;
 import android.widget.ListView;
@@ -118,7 +117,7 @@ public class OCRActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private Map<String,Double> getTextFromImage(Bitmap bitmap){
         String[] strArr;
-        List<String> list = new ArrayList<>();
+        List<String> list;
         Map<String, Double> map = new HashMap<>();
         TextRecognizer recognizer = new TextRecognizer.Builder(this).build();
         if(!recognizer.isOperational()){

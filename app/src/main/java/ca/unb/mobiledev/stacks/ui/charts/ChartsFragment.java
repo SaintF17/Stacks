@@ -12,6 +12,14 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.anychart.AnyChart;
+import com.anychart.AnyChartView;
+import com.anychart.chart.common.dataentry.DataEntry;
+import com.anychart.charts.Pie;
+
+import java.util.List;
+
+import ca.unb.mobiledev.stacks.R;
 import ca.unb.mobiledev.stacks.databinding.FragmentChartsBinding;
 
 public class ChartsFragment extends Fragment {
@@ -19,20 +27,17 @@ public class ChartsFragment extends Fragment {
     private ChartsViewModel chartsViewModel;
     private FragmentChartsBinding binding;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        chartsViewModel =
-                new ViewModelProvider(this).get(ChartsViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        chartsViewModel = new ViewModelProvider(this).get(ChartsViewModel.class);
 
         binding = FragmentChartsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textCharts;
-        chartsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
+        final AnyChartView chartView = binding.anyChartView;
+        Pie pie = AnyChart.pie();
+        chartsViewModel.getList().observe(getViewLifecycleOwner(), data -> {
+            pie.data(data);
+            chartView.setChart(pie);
         });
         return root;
     }

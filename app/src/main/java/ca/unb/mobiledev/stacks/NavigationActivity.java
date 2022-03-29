@@ -16,6 +16,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import ca.unb.mobiledev.stacks.databinding.ActivityNavigationBinding;
+import ca.unb.mobiledev.stacks.ui.charts.ChartsFragment;
 
 public class NavigationActivity extends AppCompatActivity {
 
@@ -35,6 +36,7 @@ public class NavigationActivity extends AppCompatActivity {
             Intent i = new Intent(NavigationActivity.this, OCRActivity.class);
             startActivity(i);
         });
+        
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each

@@ -35,11 +35,11 @@ public class SetupActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_setup);
 
         objects = new ArrayList<>();
         activeCategories = new ArrayList<>();
-        //--------------------------------------------------------- EDITTEXT
+
         rent = new CategoryObject("Rent", findViewById(R.id.text_rent));
         objects.add(rent);
         entertainment = new CategoryObject("Entertainment", findViewById(R.id.text_entertainment));
@@ -60,8 +60,6 @@ public class SetupActivity extends AppCompatActivity {
         phone.getText().setVisibility(View.INVISIBLE);
         utilities.getText().setVisibility(View.INVISIBLE);
 
-        //--------------------------------------------------------- EDITTEXT
-        //--------------------------------------------------------- CHECKBOX
         rent_box = findViewById(R.id.Rent);
         entertainment_box = findViewById(R.id.Entertainment);
         fuel_box = findViewById(R.id.Fuel);
@@ -69,42 +67,38 @@ public class SetupActivity extends AppCompatActivity {
         phone_box = findViewById(R.id.Phone);
         utilities_box = findViewById(R.id.Utilities);
 
-        View.OnClickListener checkBoxListener = new View.OnClickListener() {
+        View.OnClickListener checkBoxListener = v -> {
 
-            @Override
-            public void onClick(View v) {
+            if (rent_box.isChecked())
+                rent.getText().setVisibility(View.VISIBLE);
+            if(!rent_box.isChecked())
+                rent.getText().setVisibility(View.INVISIBLE);
 
-                if (rent_box.isChecked())
-                    rent.getText().setVisibility(View.VISIBLE);
-                if(!rent_box.isChecked())
-                    rent.getText().setVisibility(View.INVISIBLE);
+            if (entertainment_box.isChecked())
+                entertainment.getText().setVisibility(View.VISIBLE);
+            if(!entertainment_box.isChecked())
+                entertainment.getText().setVisibility(View.INVISIBLE);
 
-                if (entertainment_box.isChecked())
-                    entertainment.getText().setVisibility(View.VISIBLE);
-                if(!entertainment_box.isChecked())
-                    entertainment.getText().setVisibility(View.INVISIBLE);
+            if (fuel_box.isChecked())
+                fuel.getText().setVisibility(View.VISIBLE);
+            if(!fuel_box.isChecked())
+                fuel.getText().setVisibility(View.INVISIBLE);
 
-                if (fuel_box.isChecked())
-                    fuel.getText().setVisibility(View.VISIBLE);
-                if(!fuel_box.isChecked())
-                    fuel.getText().setVisibility(View.INVISIBLE);
+            if (groceries_box.isChecked())
+                groceries.getText().setVisibility(View.VISIBLE);
+            if(!groceries_box.isChecked())
+                groceries.getText().setVisibility(View.INVISIBLE);
 
-                if (groceries_box.isChecked())
-                    groceries.getText().setVisibility(View.VISIBLE);
-                if(!groceries_box.isChecked())
-                    groceries.getText().setVisibility(View.INVISIBLE);
+            if (phone_box.isChecked())
+                phone.getText().setVisibility(View.VISIBLE);
+            if(!phone_box.isChecked())
+                phone.getText().setVisibility(View.INVISIBLE);
 
-                if (phone_box.isChecked())
-                    phone.getText().setVisibility(View.VISIBLE);
-                if(!phone_box.isChecked())
-                    phone.getText().setVisibility(View.INVISIBLE);
+            if (utilities_box.isChecked())
+                utilities.getText().setVisibility(View.VISIBLE);
+            if(!utilities_box.isChecked())
+                utilities.getText().setVisibility(View.INVISIBLE);
 
-                if (utilities_box.isChecked())
-                    utilities.getText().setVisibility(View.VISIBLE);
-                if(!utilities_box.isChecked())
-                    utilities.getText().setVisibility(View.INVISIBLE);
-
-            }
         };
         rent_box.setOnClickListener(checkBoxListener);
         entertainment_box.setOnClickListener(checkBoxListener);

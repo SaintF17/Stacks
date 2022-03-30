@@ -2,20 +2,15 @@ package ca.unb.mobiledev.stacks.utils;
 
 import android.widget.EditText;
 
-import java.util.ArrayList;
-
+// Should only be used to make mutable budget $ amount
+// when first choosing pre-made splash screen categories
 public class CategoryObject {
     private String name;
     private EditText budgetText;
 
-    // Store the related items in a category in an arr of ItemObjects
-    // would this be easier if implemented as a <T> instead (or linked list?)
-    private ArrayList<ItemObject> itemObjects;
-
     public CategoryObject(String name, EditText text) {
         this.name = name;
         this.budgetText = text;
-        itemObjects = new ArrayList<>();
     }
 
     public String getName() {

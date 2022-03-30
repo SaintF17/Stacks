@@ -28,11 +28,12 @@ public class CategoryFragment extends Fragment {
         View root = binding.getRoot();
 
         final TextView textView = binding.textCategory;
-        categoryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        categoryViewModel.updateItemsList().observe(getViewLifecycleOwner(), new Observer() {
             @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+            public void onChanged(Object o) {
+                textView.setText(o.toString());
             }
+
         });
         return root;
     }

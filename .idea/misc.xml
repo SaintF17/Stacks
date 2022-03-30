@@ -18,6 +18,12 @@
         <entry key="..\:/Users/mxm20/Desktop/Stacks/app/src/main/res/layout/nav_header_navigation.xml" value="0.11041666666666666" />
         <entry key="..\:/Users/mxm20/Desktop/Stacks/app/src/main/res/menu/activity_home_drawer.xml" value="0.1" />
         <entry key="..\:/Users/mxm20/Desktop/Stacks/app/src/main/res/menu/navigation.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/ItemRow.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/category_row.xml" value="0.1425925925925926" />
+        <entry key="app/src/main/res/layout/category_row_simple.xml" value="0.1403242147922999" />
+        <entry key="app/src/main/res/layout/fragment_charts.xml" value="0.1425925925925926" />
+        <entry key="app/src/main/res/layout/item_row.xml" value="0.22644927536231885" />
+        <entry key="app/src/main/res/layout/nav_header_navigation.xml" value="0.22644927536231885" />
       </map>
     </option>
   </component>

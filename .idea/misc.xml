@@ -3,27 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/mxm20/Desktop/Stacks/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/mxm20/Desktop/Stacks/app/src/main/res/drawable/ic_untitled.xml" value="0.12222222222222222" />
-        <entry key="..\:/Users/mxm20/Desktop/Stacks/app/src/main/res/layout/activity_OCR.xml" value="0.11041666666666666" />
-        <entry key="..\:/Users/mxm20/Desktop/Stacks/app/src/main/res/layout/activity_chart.xml" value="0.10729166666666666" />
         <entry key="..\:/Users/mxm20/Desktop/Stacks/app/src/main/res/layout/activity_home.xml" value="0.22" />
         <entry key="..\:/Users/mxm20/Desktop/Stacks/app/src/main/res/layout/activity_main.xml" value="0.7806691449814126" />
-        <entry key="..\:/Users/mxm20/Desktop/Stacks/app/src/main/res/layout/activity_navigation.xml" value="0.1" />
-        <entry key="..\:/Users/mxm20/Desktop/Stacks/app/src/main/res/layout/activity_ocr.xml" value="0.6" />
-        <entry key="..\:/Users/mxm20/Desktop/Stacks/app/src/main/res/layout/category_row.xml" value="0.1" />
-        <entry key="..\:/Users/mxm20/Desktop/Stacks/app/src/main/res/layout/fragment_charts.xml" value="0.10729166666666666" />
         <entry key="..\:/Users/mxm20/Desktop/Stacks/app/src/main/res/layout/fragment_home.xml" value="0.11041666666666666" />
-        <entry key="..\:/Users/mxm20/Desktop/Stacks/app/src/main/res/layout/my_adapter_item.xml" value="0.11041666666666666" />
         <entry key="..\:/Users/mxm20/Desktop/Stacks/app/src/main/res/layout/nav_header_navigation.xml" value="0.11041666666666666" />
-        <entry key="..\:/Users/mxm20/Desktop/Stacks/app/src/main/res/menu/activity_home_drawer.xml" value="0.1" />
-        <entry key="..\:/Users/mxm20/Desktop/Stacks/app/src/main/res/menu/navigation.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/ItemRow.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/category_row.xml" value="0.1425925925925926" />
-        <entry key="app/src/main/res/layout/category_row_simple.xml" value="0.1403242147922999" />
-        <entry key="app/src/main/res/layout/fragment_charts.xml" value="0.1425925925925926" />
-        <entry key="app/src/main/res/layout/item_row.xml" value="0.22644927536231885" />
-        <entry key="app/src/main/res/layout/nav_header_navigation.xml" value="0.22644927536231885" />
+        <entry key="..\:/Users/pyrom/AndroidStudioProjects/Stacks/app/src/main/res/layout/activity_input.xml" value="0.16" />
+        <entry key="..\:/Users/pyrom/AndroidStudioProjects/Stacks/app/src/main/res/layout/activity_navigation.xml" value="0.14375" />
+        <entry key="..\:/Users/pyrom/AndroidStudioProjects/Stacks/app/src/main/res/layout/activity_setup.xml" value="0.2554347826086957" />
+        <entry key="..\:/Users/pyrom/AndroidStudioProjects/Stacks/app/src/main/res/layout/activity_splash.xml" value="0.14375" />
+        <entry key="..\:/Users/pyrom/AndroidStudioProjects/Stacks/app/src/main/res/layout/app_bar_navigation.xml" value="0.14375" />
+        <entry key="..\:/Users/pyrom/AndroidStudioProjects/Stacks/app/src/main/res/layout/category_row.xml" value="0.264" />
+        <entry key="..\:/Users/pyrom/AndroidStudioProjects/Stacks/app/src/main/res/layout/category_row_simple.xml" value="0.14375" />
+        <entry key="..\:/Users/pyrom/AndroidStudioProjects/Stacks/app/src/main/res/layout/content_navigation.xml" value="0.24365942028985507" />
+        <entry key="..\:/Users/pyrom/AndroidStudioProjects/Stacks/app/src/main/res/layout/fragment_home.xml" value="0.15307971014492755" />
+        <entry key="..\:/Users/pyrom/AndroidStudioProjects/Stacks/app/src/main/res/layout/nav_header_navigation.xml" value="0.14375" />
       </map>
     </option>
   </component>

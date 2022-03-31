@@ -1,6 +1,7 @@
 package ca.unb.mobiledev.stacks;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         CategoryObject object = categories.get(position);
         holder.setDetails(object);
+        holder.itemView.setOnClickListener(view -> {
+            Intent intent = new Intent(this.context, InputActivity.class);
+            intent.putExtra("Title", object.getName());
+            intent.putExtra("Index", position);
+            context.startActivity(intent);
+        });
     }
 
     @Override
@@ -55,8 +62,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         public void setDetails(CategoryObject o){
             category.setText(o.getName());
             progressBar.setMax(Integer.parseInt(o.getText().getText().toString()));
-            Random random = new Random();
-            progressBar.setProgress(random.nextInt(progressBar.getMax()));
+            progressBar.setProgress(o.getExpense());
             budget.setText("$" + progressBar.getProgress() + " used out of $" + o.getText().getText().toString());
         }
     }

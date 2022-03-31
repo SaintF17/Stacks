@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ca.unb.mobiledev.stacks"
-    xmlns:dist="http://schemas.android.com/apk/distribution">
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="ca.unb.mobiledev.stacks">
 
     <dist:module dist:instant="true" />
-    <uses-permission android:name="android.permission.CAMERA/"/>
+
+    <uses-permission android:name="android.permission.CAMERA/" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Stacks">
+        <activity
+            android:name=".InputActivity"
+            android:exported="false" />
         <activity
             android:name=".NavigationActivity"
             android:exported="false"
@@ -40,7 +44,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"/>
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
     </application>
 
 </manifest>

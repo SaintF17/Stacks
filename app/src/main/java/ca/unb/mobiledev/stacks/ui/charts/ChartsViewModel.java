@@ -10,6 +10,7 @@ import com.anychart.chart.common.dataentry.ValueDataEntry;
 import java.util.ArrayList;
 import java.util.List;
 
+import ca.unb.mobiledev.stacks.SetupActivity;
 import ca.unb.mobiledev.stacks.utils.CategoryObject;
 
 public class ChartsViewModel extends ViewModel {
@@ -19,10 +20,10 @@ public class ChartsViewModel extends ViewModel {
     public ChartsViewModel() {
 
         List<DataEntry> data = new ArrayList<>();
-        data.add(new ValueDataEntry("John", 10000));
-        data.add(new ValueDataEntry("Jake", 12000));
-        data.add(new ValueDataEntry("Peter", 18000));
-
+        for(int i = 0; i < SetupActivity.activeCategories.size(); i++){
+            data.add(new ValueDataEntry(SetupActivity.activeCategories.get(i).getName(),
+                    SetupActivity.activeCategories.get(i).getExpense()));
+        }
         mData = new MutableLiveData<>();
         mData.setValue(data);
     }

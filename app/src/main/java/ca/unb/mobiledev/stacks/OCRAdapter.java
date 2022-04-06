@@ -16,6 +16,14 @@ public class OCRAdapter extends BaseAdapter {
         mData.addAll(map.entrySet());
     }
 
+    public void removeItem(int pos){
+        mData.remove(pos);
+    }
+
+    public boolean isEmpty(){
+        return mData.isEmpty();
+    }
+
     @Override
     public int getCount(){
         return mData.size();
@@ -26,8 +34,8 @@ public class OCRAdapter extends BaseAdapter {
         return (Map.Entry) mData.get(pos);
     }
 
+
     @Override public long getItemId(int pos){
-        //do
         return 0;
     }
 

@@ -62,7 +62,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         public void setDetails(CategoryObject o){
             category.setText(o.getName());
             progressBar.setMax(Integer.parseInt(o.getText().getText().toString()));
-            progressBar.setProgress(o.getExpense());
+            progressBar.setProgress((int)o.getExpense());
             budget.setText("$" + progressBar.getProgress() + " used out of $" + o.getText().getText().toString());
         }
     }

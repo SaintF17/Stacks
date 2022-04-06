@@ -15,6 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Stacks">
         <activity
+            android:name=".InputActivityOCR"
+            android:exported="false"
+            />
+        <activity
             android:name=".InputActivity"
             android:exported="false" />
         <activity
@@ -24,10 +28,12 @@
             android:theme="@style/Theme.Stacks.NoActionBar" />
         <activity
             android:name=".SetupActivity"
+            android:noHistory="true"
             android:exported="false"
             android:label="" />
         <activity
             android:name=".SplashActivity"
+            android:noHistory="true"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

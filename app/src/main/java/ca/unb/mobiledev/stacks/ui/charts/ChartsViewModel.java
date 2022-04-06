@@ -10,6 +10,8 @@ import com.anychart.chart.common.dataentry.ValueDataEntry;
 import java.util.ArrayList;
 import java.util.List;
 
+import ca.unb.mobiledev.stacks.utils.CategoryObject;
+
 public class ChartsViewModel extends ViewModel {
 
     private MutableLiveData<List<DataEntry>> mData;

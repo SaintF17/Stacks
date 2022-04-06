@@ -14,6 +14,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.SparseArray;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -67,6 +69,24 @@ public class OCRActivity extends AppCompatActivity {
                     Map<String, Double> cinemas = getTextFromImage(bitmap);
                     OCRAdapter adapter = new OCRAdapter(cinemas);
                     listView.setAdapter(adapter);
+
+                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+                        @Override
+                        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                            Map.Entry<String, Double> item = (Map.Entry<String, Double>) adapterView.getItemAtPosition(i);
+                            Intent intent = new Intent(OCRActivity.this, InputActivityOCR.class);
+                            intent.putExtra("item",item.getKey());
+                            intent.putExtra("price", item.getValue());
+                            adapter.removeItem(i);
+                            adapter.notifyDataSetChanged();
+                            if(adapter.isEmpty()){
+                                Intent resume = new Intent(OCRActivity.this, NavigationActivity.class);
+                                startActivity(resume);
+                            }
+                            startActivity(intent);
+                        }
+                    });
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

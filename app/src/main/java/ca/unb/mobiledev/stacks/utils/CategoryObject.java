@@ -7,7 +7,7 @@ import android.widget.EditText;
 public class CategoryObject {
     private String name;
     private EditText budgetText;
-    private int expense;
+    private double expense;
 
     public CategoryObject(String name, EditText text) {
         this.name = name;
@@ -31,11 +31,11 @@ public class CategoryObject {
         this.budgetText = text;
     }
 
-    public int getExpense() {
+    public double getExpense() {
         return expense;
     }
 
-    public void setExpense(int expense) {
+    public void setExpense(double expense) {
         this.expense += expense;
     }
 }

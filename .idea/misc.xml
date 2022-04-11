@@ -25,6 +25,11 @@
         <entry key="..\:/Users/pyrom/AndroidStudioProjects/Stacks/app/src/main/res/layout/content_navigation.xml" value="0.24365942028985507" />
         <entry key="..\:/Users/pyrom/AndroidStudioProjects/Stacks/app/src/main/res/layout/fragment_home.xml" value="0.15307971014492755" />
         <entry key="..\:/Users/pyrom/AndroidStudioProjects/Stacks/app/src/main/res/layout/nav_header_navigation.xml" value="0.14375" />
+        <entry key="app/src/main/res/drawable/view_list.xml" value="0.2109375" />
+        <entry key="app/src/main/res/layout/activity_navigation.xml" value="0.21240942028985507" />
+        <entry key="app/src/main/res/layout/category_object_adapter.xml" value="0.21240942028985507" />
+        <entry key="app/src/main/res/layout/fragment_charts.xml" value="0.21240942028985507" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21240942028985507" />
       </map>
     </option>
   </component>

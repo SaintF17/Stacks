@@ -22,12 +22,11 @@ public class CategoryRepository {
         categoryDao = db.categoryDao();
     }
 
-
     public LiveData<List<Category>> listAllCategories() {
         return categoryDao.listAllCategories();
     }
 
-    public void insertRecord(String name, float budgetAmount) {
+    public void insertRecord(String name, double budgetAmount) {
         Category newCategory = new Category();
         newCategory.setName(name);
         newCategory.setBudgetAmount(budgetAmount);

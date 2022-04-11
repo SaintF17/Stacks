@@ -10,7 +10,7 @@ public class Category {
     private int id;
 
     private String name;
-    private float budgetAmount;
+    private double budgetAmount;  // double is simplest datatype for now
 
     public void setId(int id) {
         this.id = id;
@@ -28,11 +28,11 @@ public class Category {
         this.name = name;
     }
 
-    public float getBudgetAmount() {
+    public double getBudgetAmount() {
         return budgetAmount;
     }
 
-    public void setBudgetAmount(float budgetAmount) {
+    public void setBudgetAmount(double budgetAmount) {
         this.budgetAmount = budgetAmount;
     }
 }

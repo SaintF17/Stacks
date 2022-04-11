@@ -4,20 +4,28 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 
 import java.util.ArrayList;
 
+import ca.unb.mobiledev.stacks.repository.CategoryRepository;
 import ca.unb.mobiledev.stacks.utils.CategoryObject;
 
 public class SetupActivity extends AppCompatActivity {
 
     //Arraylist of all initial categories
     private ArrayList<CategoryObject> objects;
+
     //Arraylist of all selected categories
     public static ArrayList<CategoryObject> activeCategories;
+
+    // Make repo instance to store activeCategories to db
+    private CategoryRepository repo;
+
+    // the CategoryObjects holding out user values when selected
     private CategoryObject rent;
     private CategoryObject entertainment;
     private CategoryObject fuel;
@@ -25,6 +33,7 @@ public class SetupActivity extends AppCompatActivity {
     private CategoryObject phone;
     private CategoryObject utilities;
 
+    // allow user to select any combo of listing categories
     private CheckBox rent_box;
     private CheckBox entertainment_box;
     private CheckBox fuel_box;
@@ -39,6 +48,10 @@ public class SetupActivity extends AppCompatActivity {
 
         objects = new ArrayList<>();
         activeCategories = new ArrayList<>();
+
+        // initialize the category repo to facilitate
+        // data transfer from 1st-time setup -> forever
+        repo = new CategoryRepository(getApplication());
 
         rent = new CategoryObject("Rent", findViewById(R.id.text_rent));
         objects.add(rent);
@@ -112,10 +125,29 @@ public class SetupActivity extends AppCompatActivity {
         next.setOnClickListener(view -> {
             //Loop to populate active categories. Probably a cleaner way of doing it but this prevents concurrency exceptions.
             for (CategoryObject o: objects) {
-                if((o.getText().getVisibility() == View.VISIBLE))
+                // If the object is visible, it was also checked previously,
+                // therefore add it to the list & repo
+                if((o.getText().getVisibility() == View.VISIBLE)) {
+                    // add it to active
                     activeCategories.add(o);
+
+                    // grab the params from current object
+                    String name = o.getName();
+                    String num = o.getText().getText().toString(); // this is the easiest way to get correct value
+                    Double budgetLimit = Double.parseDouble(num); // cast it to a double now to pass in
+
+                    // now we have our two params, try an insert into database
+                    // may need to implement more catches in future to
+                    // prevent crashes
+//                    try {
+//                        repo.insertRecord(name, budgetLimit);
+//                    } catch (NumberFormatException e) {
+//                        Log.e("SetupActivity", e.toString());
+//                    }
+                }
             }
             Intent intent = new Intent(SetupActivity.this, NavigationActivity.class);
+            // finish up with Setup, start Home Activity
             startActivity(intent);
         });
 

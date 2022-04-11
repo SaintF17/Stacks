@@ -8,12 +8,23 @@ public class CategoryObject {
     private String name;
     private EditText budgetText;
     private double expense;
+    private double budgetLimit;
 
     public CategoryObject(String name, EditText text) {
         this.name = name;
         this.budgetText = text;
         expense = 0;
     }
+
+    // Secondary constructor for future use to make
+    // objects in lists w/o Edittext, mirrors params
+    // of the Repo Category entity
+    public CategoryObject(String name, double budgetLimit) {
+        this.name = name;
+        this.budgetLimit = budgetLimit;
+        expense = 0;
+    }
+
 
     public String getName() {
         return name;
@@ -37,5 +48,15 @@ public class CategoryObject {
 
     public void setExpense(double expense) {
         this.expense += expense;
+    }
+
+    // to use in lieu of edittext
+    // i.e. when making RecyclerViews
+    public double getBudgetLimit() {
+        return budgetLimit;
+    }
+
+    public void setBudgetLimit(double budgetLimit) {
+        this.budgetLimit = budgetLimit;
     }
 }

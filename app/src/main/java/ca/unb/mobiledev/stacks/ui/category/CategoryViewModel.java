@@ -14,6 +14,8 @@ import ca.unb.mobiledev.stacks.repository.CategoryRepository;
 
 public class CategoryViewModel extends AndroidViewModel {
     private final CategoryRepository categoryRepository;
+
+    // don't try to access this list directly, use helper methods ..
     private LiveData<List<Category>> categories;
 
     public CategoryViewModel(@NonNull Application application) {
@@ -26,7 +28,7 @@ public class CategoryViewModel extends AndroidViewModel {
         return categoryRepository.listAllCategories();
     }
 
-    public void insert(String name, int num) {
+    public void insertRecord(String name, double num) {
         categoryRepository.insertRecord(name, num);
     }
 

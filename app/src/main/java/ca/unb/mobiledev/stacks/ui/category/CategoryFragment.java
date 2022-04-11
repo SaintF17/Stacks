@@ -28,13 +28,15 @@ public class CategoryFragment extends Fragment {
         View root = binding.getRoot();
 
         final TextView textView = binding.textCategory;
-        categoryViewModel.updateItemsList().observe(getViewLifecycleOwner(), new Observer() {
-            @Override
-            public void onChanged(Object o) {
-                textView.setText(o.toString());
-            }
-
-        });
+        // Code implemented to later refresh list of categories from db
+//        categoryViewModel.updateItemsList().observe(getViewLifecycleOwner(), new Observer() {
+//            @Override
+//            public void onChanged(Object o) {
+//                textView.setText(o.toString());
+//            }
+//
+//        });
+        textView.setText("Category Listing is not yet implemented!");
         return root;
     }
 

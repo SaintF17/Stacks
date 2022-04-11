@@ -37,6 +37,7 @@ import java.util.Map;
 public class OCRActivity extends AppCompatActivity {
     private ListView listView;
     Button button_capture;
+    Button button_done;
     Bitmap bitmap;
     private static final int REQUEST_CAMERA_CODE = 100;
 
@@ -46,6 +47,7 @@ public class OCRActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ocr);
 
         button_capture = findViewById(R.id.button_capture);
+        button_done = findViewById(R.id.button_done);
         listView = findViewById(R.id.listview);
 
         if(ContextCompat.checkSelfPermission(OCRActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
@@ -55,6 +57,7 @@ public class OCRActivity extends AppCompatActivity {
         }
 
         button_capture.setOnClickListener(view -> CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).start(OCRActivity.this));
+        button_done.setOnClickListener(view -> startActivity(new Intent(OCRActivity.this, NavigationActivity.class)));
     }
 
     @Override

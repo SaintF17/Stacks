@@ -39,7 +39,6 @@ public class InputActivityOCR extends AppCompatActivity {
         amount = findViewById(R.id.input_item_amount);
         addExpenses = findViewById(R.id.add_expenses);
 
-
         //user can't edit (automatic input)
         itemName.setKeyListener(null);
         amount.setKeyListener(null);

@@ -59,4 +59,5 @@ public class CategoryObject {
     public void setBudgetLimit(double budgetLimit) {
         this.budgetLimit = budgetLimit;
     }
+
 }

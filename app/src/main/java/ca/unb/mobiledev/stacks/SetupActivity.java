@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -127,7 +129,7 @@ public class SetupActivity extends AppCompatActivity {
             for (CategoryObject o: objects) {
                 // If the object is visible, it was also checked previously,
                 // therefore add it to the list & repo
-                if((o.getText().getVisibility() == View.VISIBLE)) {
+                if((o.getText().getVisibility() == View.VISIBLE) && !o.getText().getText().toString().equals("")) {
                     // add it to active
                     activeCategories.add(o);
 

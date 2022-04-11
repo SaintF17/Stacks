@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -157,8 +158,16 @@ public class OCRActivity extends AppCompatActivity {
             list.removeAll(Arrays.asList("",null));
             List<Double> price_List = getPriceList(list);
             List<String> product_List = getProductList(list);
-            map = listToMap(product_List,price_List);
-
+            try{
+                map = listToMap(product_List,price_List);
+            }catch(IllegalArgumentException e){
+                Context context = getApplicationContext();
+                CharSequence text = "Cropping must only include name and item and price";
+                int duration = Toast.LENGTH_LONG;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+                finish();
+            }
             button_capture.setText("Retake");
         }
         return map;

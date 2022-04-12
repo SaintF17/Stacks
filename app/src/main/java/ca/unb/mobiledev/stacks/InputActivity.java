@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import ca.unb.mobiledev.stacks.ui.home.HomeFragment;
 
@@ -37,9 +38,15 @@ public class InputActivity extends AppCompatActivity {
                 /* Will change when db is properly set up. Currently just finds the CategoryObject
                 that was clicked on (from the arraylist of active activities) and updates its expense value.
                 */
-                SetupActivity.activeCategories.get(getIntent().getIntExtra("Index", -1))
-                        .setExpense(Integer.parseInt(amount.getText().toString()));
-                startActivity(intent);
+                if(amount.getText().toString().equals("") || amount.getText().toString().contains(".")){
+                    Toast.makeText(getApplicationContext(), "Whole numbers only", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                else{
+                    SetupActivity.activeCategories.get(getIntent().getIntExtra("Index", -1))
+                            .setExpense(Integer.parseInt(amount.getText().toString()));
+                    startActivity(intent);
+                }
             }
         });
     }

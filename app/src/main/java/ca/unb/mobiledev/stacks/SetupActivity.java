@@ -129,7 +129,8 @@ public class SetupActivity extends AppCompatActivity {
             for (CategoryObject o: objects) {
                 // If the object is visible, it was also checked previously,
                 // therefore add it to the list & repo
-                if((o.getText().getVisibility() == View.VISIBLE) && !o.getText().getText().toString().equals("")) {
+                if((o.getText().getVisibility() == View.VISIBLE) && !o.getText().getText().toString().equals("") &&
+                        !o.getText().getText().toString().contains(".")) {
                     // add it to active
                     activeCategories.add(o);
 
